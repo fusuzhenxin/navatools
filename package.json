@@ -1,0 +1,29 @@
+{
+  "name": "novatools",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 3000",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 3000",
+    "lint": "oxlint",
+    "crawl": "node scripts/crawl-novatools.mjs",
+    "crawl:screenshots": "node scripts/crawl-novatools.mjs --screenshots"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "lucide-react": "^1.34.0",
+    "next": "^16.3.3",
+    "nodemailer": "^9.0.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "oxlint": "^1.79.0",
+    "puppeteer-core": "^24.43.1",
+    "tailwindcss": "^4.3.3"
+  }
+}

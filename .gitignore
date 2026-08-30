@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+dist
+.DS_Store
+*.log
+public/data/tools.json.tmp
+.env
+.env.*
+.env*.local
+.vercel

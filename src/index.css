@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fcfcfd;
+  --color-foreground: #0a0a0a;
+  --color-brand: #026fd7;
+  --color-brand-foreground: #fafcfe;
+  --color-brand-hover: #005dc0;
+  --color-brand-soft: #e4f0ff;
+  --color-brand-subtle: #f4f9ff;
+  --color-border: #e5e5e5;
+  --color-card: #ffffff;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #737373;
+  --color-surface: #fafcfe;
+  --color-surface-muted: #f2f5f9;
+  --color-surface-raised: #ffffff;
+  --color-text-primary: #151b23;
+  --color-text-secondary: #4c5663;
+  --color-text-tertiary: #7c8795;
+  --color-success: #008153;
+  --color-success-soft: #dffaea;
+  --color-info: #0081b5;
+  --color-info-soft: #e4f5ff;
+  --color-warning: #cd8d18;
+  --color-warning-soft: #fff3dc;
+  --color-destructive: #e40014;
+  --color-input: #e5e5e5;
+  --radius-card: 0.625rem;
+  --radius-control: 0.5rem;
+  --radius-panel: 0.75rem;
+  --shadow-card: 0 1px 2px #0f172a0a;
+  --shadow-card-hover: 0 8px 24px #0f172a14;
+  --shadow-popover: 0 16px 40px #0f172a24;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 0.8s linear infinite;
+}
