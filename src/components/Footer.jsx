@@ -3,7 +3,6 @@
 import { House, LayoutGrid, Search, User } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { CONTACT, FOOTER, IMG } from '../data/site.js'
-import Brand from './Brand.jsx'
 import Link from './Link.jsx'
 import NavLink from './NavLink.jsx'
 
@@ -28,7 +27,9 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex flex-col items-center lg:items-start">
-                <Brand invert />
+                <div className="relative w-[120px] h-[40px]">
+                  <img src={IMG.banner} alt="ToolLu Logo" className="h-full w-full object-contain brightness-0 invert" />
+                </div>
                 <p className="mt-4 text-sm text-gray-400 text-center lg:text-left">{FOOTER.about}</p>
                 <p className="mt-2 text-sm text-gray-400 text-center lg:text-left">{FOOTER.mission}</p>
               </div>

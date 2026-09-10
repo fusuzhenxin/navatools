@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
-import Brand from './Brand.jsx'
+import { IMG } from '../data/site.js'
 
 export default function LoginModal() {
   const { loginOpen, setLoginOpen, login } = useAuth()
@@ -27,7 +27,7 @@ export default function LoginModal() {
       >
         <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Brand compact />
+            <img src={IMG.logo} alt="" className="h-8 w-8 rounded-md object-cover" />
             <h2 className="text-lg font-semibold text-text-primary">{mode === 'login' ? '登录 ToolLu' : '创建账号'}</h2>
           </div>
           <button type="button" className="rounded-lg p-1 text-text-tertiary hover:bg-surface-muted" onClick={() => setLoginOpen(false)}>
