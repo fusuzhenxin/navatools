@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import InsightDetail from '../../../src/views/InsightDetail.jsx'
 import { getInsights } from '../../../src/data/tools.js'
-import { pageMeta } from '../../../src/lib/seo.js'
+import { pageMeta, SITE_NAME } from '../../../src/lib/seo.js'
 
 export function generateStaticParams() {
   return getInsights().map((item) => ({ slug: item.slug }))
@@ -10,9 +10,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const item = getInsights().find((i) => i.slug === slug)
-  if (!item) return pageMeta({ title: '未找到该观察 - NovaTools', path: `/insights/${slug}`, noIndex: true })
+  if (!item) return pageMeta({ title: `未找到该观察 - ${SITE_NAME}`, path: `/insights/${slug}`, noIndex: true })
   return pageMeta({
-    title: `${item.title} - NovaTools`,
+    title: `${item.title} - ${SITE_NAME}`,
     description: item.excerpt,
     path: `/insights/${item.slug}`,
   })

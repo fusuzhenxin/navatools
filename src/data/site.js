@@ -26,7 +26,7 @@ export const SEARCH_HINTS = ['AI 图片生成', '代码补全', '视频剪辑', 
 export const FOOTER = {
   about: '按任务和分类收 AI 工具，方便对照试用，而不是只收藏一堆官网。',
   mission: '先看你要完成什么，再看价格、语言和能不能接进现有流程。',
-  seo: 'NovaTools 是中文 AI 工具导航站，方便你搜 AI 工具、找 AI 导航、对比免费 AI 工具和热门大模型。覆盖 ChatGPT、Claude、Gemini、DeepSeek、Cursor、Codex、Midjourney、Sora，以及 AI 写作、AI 绘画、AI 视频、AI 智能体等方向。也持续跟踪 Codex 雷达、模型更新和工具榜单，帮你更快找到能用的那一个。',
+  seo: 'ToolLu 是中文 AI 工具导航站，方便你搜 AI 工具、找 AI 导航、对比免费 AI 工具和热门大模型。覆盖 ChatGPT、Claude、Gemini、DeepSeek、Cursor、Codex、Midjourney、Sora，以及 AI 写作、AI 绘画、AI 视频、AI 智能体等方向。也持续跟踪 Codex 雷达、模型更新和工具榜单，帮你更快找到能用的那一个。',
   keywords: [
     { label: 'AI工具', to: '/tools' },
     { label: 'AI导航', to: '/categories' },

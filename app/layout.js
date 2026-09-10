@@ -26,7 +26,7 @@ export const metadata = {
     description: DEFAULT_DESCRIPTION,
   },
   icons: {
-    icon: 'https://pics.novatools.cn/images/logo@192x.png',
+    icon: '/favicon.svg',
   },
 }
 

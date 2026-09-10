@@ -4,8 +4,8 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 const AuthContext = createContext(null)
 
-const AUTH_KEY = 'novatools.user'
-const FAV_KEY = 'novatools.favorites'
+const AUTH_KEY = 'toollu.user'
+const FAV_KEY = 'toollu.favorites'
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)

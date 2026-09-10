@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
-import { IMG } from '../data/site.js'
+import Brand from './Brand.jsx'
 
 export default function LoginModal() {
   const { loginOpen, setLoginOpen, login } = useAuth()
@@ -15,8 +15,8 @@ export default function LoginModal() {
 
   const submit = (e) => {
     e.preventDefault()
-    const name = email.split('@')[0] || 'Nova 用户'
-    login({ name, email: email || `${name}@novatools.cn` })
+    const name = email.split('@')[0] || '用户'
+    login({ name, email: email || `${name}@toollu.cn` })
   }
 
   return (
@@ -27,8 +27,8 @@ export default function LoginModal() {
       >
         <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={IMG.logo} alt="" className="h-8 w-8 rounded-md object-cover" />
-            <h2 className="text-lg font-semibold text-text-primary">{mode === 'login' ? '登录 NovaTools' : '创建账号'}</h2>
+            <Brand compact />
+            <h2 className="text-lg font-semibold text-text-primary">{mode === 'login' ? '登录 ToolLu' : '创建账号'}</h2>
           </div>
           <button type="button" className="rounded-lg p-1 text-text-tertiary hover:bg-surface-muted" onClick={() => setLoginOpen(false)}>
             <X className="h-5 w-5" />

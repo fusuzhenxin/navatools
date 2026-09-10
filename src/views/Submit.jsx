@@ -22,7 +22,7 @@ export default function Submit() {
       <p className="text-sm font-medium text-brand">面向 AI 工具开发者与增长团队</p>
       <h1 className="mt-3 text-4xl font-bold leading-tight">提交你的 AI 工具，触达正在寻找解决方案的用户</h1>
       <p className="mt-4 max-w-2xl text-text-secondary">
-        NovaTools 会把优质工具呈现在分类、搜索、详情页和后续推广场景中，帮助供应商获得更精准的自然发现机会。
+        ToolLu 会把优质工具呈现在分类、搜索、详情页和后续推广场景中，帮助供应商获得更精准的自然发现机会。
       </p>
       <div className="mt-6 flex gap-3">
         <a href="#form" className="rounded-control bg-brand px-4 py-2 text-sm text-white">免费提交</a>

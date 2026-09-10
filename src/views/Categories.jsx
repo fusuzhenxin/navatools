@@ -50,7 +50,7 @@ export default function Categories() {
 
       <section className="mb-8 rounded-panel border border-border bg-brand-subtle px-6 py-10 text-center">
         <h2 className="text-2xl font-bold">没找到合适的 AI 工具？</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-text-secondary">NovaTools 持续收录全球优质 AI 工具，欢迎提交你发现的新工具或优秀产品。</p>
+        <p className="mx-auto mt-3 max-w-2xl text-text-secondary">ToolLu 持续收录全球优质 AI 工具，欢迎提交你发现的新工具或优秀产品。</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link to="/submit" className="rounded-control bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover">
             提交 AI 工具

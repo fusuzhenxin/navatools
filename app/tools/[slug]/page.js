@@ -2,14 +2,14 @@ import { notFound } from 'next/navigation'
 import ToolDetail from '../../../src/views/ToolDetail.jsx'
 import JsonLd from '../../../src/components/JsonLd.jsx'
 import { alternativeTools, getTool, sidebarTools } from '../../../src/data/tools.js'
-import { pageMeta, stripHtml } from '../../../src/lib/seo.js'
+import { pageMeta, SITE_NAME, stripHtml } from '../../../src/lib/seo.js'
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const tool = getTool(slug)
-  if (!tool) return pageMeta({ title: '未找到该工具 - NovaTools', path: `/tools/${slug}`, noIndex: true })
+  if (!tool) return pageMeta({ title: `未找到该工具 - ${SITE_NAME}`, path: `/tools/${slug}`, noIndex: true })
   return pageMeta({
-    title: tool.title || `${tool.name} - NovaTools`,
+    title: tool.title || `${tool.name} - ${SITE_NAME}`,
     description: tool.desc || stripHtml(tool.about).slice(0, 160),
     path: `/tools/${tool.slug}`,
     image: tool.cover || tool.icon,

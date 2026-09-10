@@ -6,7 +6,7 @@ export default function Insights({ insights = [] }) {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumb items={[{ label: 'AI观察' }]} />
-      <p className="text-sm font-medium text-brand">NovaTools Insights</p>
+      <p className="text-sm font-medium text-brand">ToolLu Insights</p>
       <h1 className="mt-2 text-4xl font-bold">AI观察</h1>
       <p className="mt-4 max-w-2xl text-text-secondary">
         {PAGE_LEADS.insights}

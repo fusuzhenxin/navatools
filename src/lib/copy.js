@@ -91,7 +91,7 @@ export function presentTool(tool) {
 
   return {
     ...tool,
-    title: `${tool.name}：${focus}工具 | NovaTools`,
+    title: `${tool.name}：${focus}工具 | ToolLu`,
     desc,
     about,
     features,
