@@ -27,8 +27,9 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex flex-col items-center lg:items-start">
-                <div className="relative w-[120px] h-[40px]">
-                  <img src={IMG.banner} alt="ToolLu Logo" className="h-full w-full object-contain brightness-0 invert" />
+                <div className="flex items-center gap-2">
+                  <img src={IMG.logo} alt="" className="h-8 w-8 rounded-md object-cover" />
+                  <span className="text-lg font-bold tracking-tight text-white">ToolLu</span>
                 </div>
                 <p className="mt-4 text-sm text-gray-400 text-center lg:text-left">{FOOTER.about}</p>
                 <p className="mt-2 text-sm text-gray-400 text-center lg:text-left">{FOOTER.mission}</p>

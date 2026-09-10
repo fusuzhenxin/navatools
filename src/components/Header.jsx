@@ -27,14 +27,10 @@ export default function Header() {
       <header className="md:hidden border-b border-border sticky top-0 z-50 bg-surface-raised/95 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-14">
-            <div className="flex items-center gap-3">
-              <Link to="/" className="relative w-7 h-7 rounded-lg overflow-hidden">
-                <img src={IMG.logo} alt="ToolLu Icon" className="h-7 w-7 object-cover" />
-              </Link>
-              <Link to="/" className="flex items-center h-7">
-                <img src={IMG.banner} alt="ToolLu Banner" className="h-10 w-[120px] object-contain" />
-              </Link>
-            </div>
+            <Link to="/" className="flex items-center gap-2">
+              <img src={IMG.logo} alt="" className="h-7 w-7 rounded-lg object-cover" />
+              <span className="text-base font-bold tracking-tight text-text-primary">ToolLu</span>
+            </Link>
             <div className="flex items-center gap-2">
               <button
                 className="p-2 rounded-lg text-text-secondary hover:bg-surface-muted hover:text-brand"
@@ -77,10 +73,8 @@ export default function Header() {
           <div className="relative flex items-center justify-between h-14 px-6 rounded-panel bg-surface-raised/85 backdrop-blur-xl border border-border shadow-card animate-fade-in">
             <div className="flex items-center gap-6">
               <Link to="/" className="flex items-center gap-2 group">
-                <div className="relative w-8 h-8 rounded-md overflow-hidden transition-transform group-hover:scale-110">
-                  <img src={IMG.logo} alt="ToolLu Icon" className="h-full w-full object-cover" />
-                </div>
-                <img src={IMG.banner} alt="ToolLu Banner" className="h-8 w-[100px] object-contain group-hover:opacity-80 transition-opacity" />
+                <img src={IMG.logo} alt="" className="h-8 w-8 rounded-md object-cover transition-transform group-hover:scale-110" />
+                <span className="text-lg font-bold tracking-tight text-text-primary group-hover:opacity-80">ToolLu</span>
               </Link>
               <nav className="flex items-center gap-1">
                 {NAV.map((item) => (
