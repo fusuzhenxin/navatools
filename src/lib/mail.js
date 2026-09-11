@@ -58,9 +58,9 @@ function smtpTargets(host) {
 }
 
 export async function sendToolSubmission(item) {
-  const user = process.env.SMTP_USER
-  const pass = process.env.SMTP_PASS
-  const to = process.env.SMTP_TO || user
+  const user = String(process.env.SMTP_USER || '').trim()
+  const pass = String(process.env.SMTP_PASS || '').trim()
+  const to = String(process.env.SMTP_TO || user).trim()
   if (!user || !pass) throw new Error('smtp-missing')
 
   const host = String(process.env.SMTP_HOST || 'smtp.qq.com').replace(/[\s'"]+/g, '')
