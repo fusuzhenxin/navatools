@@ -17,7 +17,8 @@ export async function POST(request) {
   try {
     await sendToolSubmission(item)
     return Response.json({ ok: true })
-  } catch {
+  } catch (error) {
+    console.error('submit-mail-failed', error?.code || '', error?.command || '', error?.message || error)
     return Response.json({ ok: false, error: 'send' }, { status: 500 })
   }
 }
