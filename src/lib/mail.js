@@ -52,8 +52,9 @@ function line(label, value) {
 const QQ_SMTP_HOSTS = ['183.47.101.192']
 
 function smtpTargets(host) {
-  if (!host || host === 'smtp.qq.com') return QQ_SMTP_HOSTS
-  return [host]
+  const name = String(host || 'smtp.qq.com').replace(/[\s'"]+/g, '')
+  if (!name || /qq\.com$/i.test(name)) return QQ_SMTP_HOSTS
+  return [name]
 }
 
 export async function sendToolSubmission(item) {
@@ -62,7 +63,7 @@ export async function sendToolSubmission(item) {
   const to = process.env.SMTP_TO || user
   if (!user || !pass) throw new Error('smtp-missing')
 
-  const host = process.env.SMTP_HOST || 'smtp.qq.com'
+  const host = String(process.env.SMTP_HOST || 'smtp.qq.com').replace(/[\s'"]+/g, '')
   const port = Number(process.env.SMTP_PORT || 465)
   const targets = smtpTargets(host)
   const body = [
@@ -94,7 +95,7 @@ export async function sendToolSubmission(item) {
         port,
         secure: port === 465,
         auth: { user, pass },
-        tls: host === 'smtp.qq.com' || !host ? { servername: 'smtp.qq.com' } : undefined,
+        tls: /qq\.com$/i.test(host) ? { servername: 'smtp.qq.com' } : undefined,
         connectionTimeout: 10000,
         greetingTimeout: 10000,
         socketTimeout: 15000,
