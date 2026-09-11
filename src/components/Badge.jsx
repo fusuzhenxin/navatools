@@ -17,12 +17,23 @@ export default function Badge({ children, tone = 'brand', className = '' }) {
   )
 }
 
-export function PriceBadge({ price, chinese, className = '' }) {
+export function compactPrice(price) {
+  const value = String(price || '').trim()
+  if (!value) return ''
+  const cjk = (value.match(/[\u4e00-\u9fff]/g) || []).length
+  if (cjk <= 6 && value.length <= 18) return value
+  if (/免费/.test(value) && /付费/.test(value)) return '免费/付费'
+  if (/免费/.test(value)) return '含免费'
+  return cjk > 8 ? `${value.slice(0, 6)}…` : value
+}
+
+export function PriceBadge({ price, chinese, className = '', compact = false }) {
   if (!price && !chinese) return null
+  const label = compact ? compactPrice(price) : price
   const isFree = price?.includes('免费') || price === '免费'
   return (
-    <div className={`flex flex-wrap items-center justify-end gap-1.5 ${className}`}>
-      {price ? <Badge tone={isFree ? 'success' : 'warning'}>{price}</Badge> : null}
+    <div className={`flex max-w-full flex-wrap items-center justify-end gap-1.5 ${className}`}>
+      {label ? <Badge tone={isFree ? 'success' : 'warning'}>{label}</Badge> : null}
       {chinese ? <Badge tone="info">中文</Badge> : null}
     </div>
   )

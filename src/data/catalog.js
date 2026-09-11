@@ -15,14 +15,17 @@ function uniq(list) {
 }
 
 function enrich(tool) {
-  const screenshots = uniq(tool.screenshots?.length ? tool.screenshots : [tool.screenshot, tool.cover])
+  const rawShots = tool.screenshots?.length ? tool.screenshots : [tool.screenshot, tool.cover]
+  const screenshots = uniq(
+    tool.editorial ? rawShots.filter((src) => src && src !== tool.icon) : rawShots,
+  )
   const categories = tool.categories || []
   return presentTool({
     ...tool,
     features: tool.features || [],
     scenarios: tool.scenarios || tool.use_cases || [],
     alternatives: tool.alternatives || [],
-    screenshot: screenshots[0] || tool.cover || tool.icon,
+    screenshot: screenshots[0] || (tool.editorial ? '' : tool.cover || tool.icon),
     screenshots,
     cover: tool.cover || screenshots[0] || tool.icon,
     categories,

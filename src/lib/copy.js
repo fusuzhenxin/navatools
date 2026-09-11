@@ -40,6 +40,13 @@ function titlesOf(list) {
 export function presentTool(tool) {
   const names = tool.categoryNames?.length ? tool.categoryNames : []
   const tags = (tool.tags || []).slice(0, 4)
+  if (tool.editorial) {
+    return {
+      ...tool,
+      title: tool.title || `${tool.name} | ToolLu`,
+      searchText: [tool.name, ...tags, ...(tool.keywords || []), ...names].join(' '),
+    }
+  }
   const focus = joinZh(tags.length ? tags : names.slice(0, 2), 'AI 工作')
   const feats = joinZh(titlesOf(tool.features).slice(0, 3), '它已经公开的几项能力')
   const scenes = joinZh(titlesOf(tool.scenarios).slice(0, 3), '日常工作和创作')

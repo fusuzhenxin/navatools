@@ -1,22 +1,22 @@
 import Link from './Link.jsx'
 import { ExternalLink, Eye } from 'lucide-react'
-import { PriceBadge, CategoryChip } from './Badge.jsx'
+import { PriceBadge, CategoryChip, compactPrice } from './Badge.jsx'
 import StarRating from './StarRating.jsx'
 import { coverUrl, formatViews, iconUrl } from '../lib/utils.js'
 
 export function ToolRowCard({ tool }) {
   return (
     <div className="group relative flex flex-col rounded-card border border-border bg-surface-raised p-4 shadow-card transition-colors hover:border-brand-soft hover:shadow-card-hover">
-      <PriceBadge price={tool.price} chinese={tool.chinese} className="absolute top-3 right-3 z-10 max-w-[45%]" />
       <Link to={`/tools/${tool.slug}`} className="flex gap-3.5">
-        <div className="flex flex-shrink-0 items-center justify-center overflow-hidden border border-border bg-surface-muted h-16 w-16 rounded-lg p-1.5">
+        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-surface-muted p-1.5">
           <img src={iconUrl(tool.icon)} alt={tool.name} className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-105" />
         </div>
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="mb-1 flex items-start justify-between gap-2 pr-24">
-            <h3 className="line-clamp-1 flex-1 text-base font-semibold text-text-primary transition-colors group-hover:text-brand">
+          <div className="mb-1 flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+            <h3 className="min-w-0 flex-1 basis-32 line-clamp-1 text-base font-semibold text-text-primary transition-colors group-hover:text-brand">
               {tool.name}
             </h3>
+            <PriceBadge compact price={tool.price} chinese={tool.chinese} className="shrink-0 justify-end" />
           </div>
           <p className="line-clamp-2 text-sm leading-relaxed text-text-secondary">{tool.desc}</p>
         </div>
@@ -65,12 +65,14 @@ export function FreeCard({ tool }) {
       to={`/tools/${tool.slug}`}
       className="group relative block rounded-card border border-border bg-surface-raised p-4 shadow-card transition-colors hover:border-brand-soft hover:shadow-card-hover"
     >
-      <PriceBadge price={tool.price || '免费'} chinese={tool.chinese} className="absolute top-3 right-3 z-10 max-w-[45%]" />
-      <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-surface-muted p-1">
-          <img src={iconUrl(tool.icon)} alt={tool.name} className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-105" />
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-surface-muted p-1">
+            <img src={iconUrl(tool.icon)} alt={tool.name} className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-105" />
+          </div>
+          <h3 className="truncate text-lg font-semibold text-text-primary group-hover:text-brand">{tool.name}</h3>
         </div>
-        <h3 className="truncate text-lg font-semibold text-text-primary group-hover:text-brand">{tool.name}</h3>
+        <PriceBadge compact price={tool.price || '免费'} chinese={tool.chinese} className="shrink-0 justify-end" />
       </div>
       <p className="mt-2 line-clamp-2 text-sm text-text-secondary">{tool.desc}</p>
       <div className="mt-2 flex max-h-[26px] flex-wrap gap-2 overflow-hidden">
@@ -104,9 +106,9 @@ export function MediaCard({ tool }) {
         </div>
       </div>
       <div className="p-4">
-        <div className="mb-2 flex items-center justify-between gap-2">
-          <h3 className="truncate text-lg font-semibold text-text-primary group-hover:text-brand">{tool.name}</h3>
-          <PriceBadge price={tool.price} chinese={tool.chinese} />
+        <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
+          <h3 className="min-w-0 flex-1 truncate text-lg font-semibold text-text-primary group-hover:text-brand">{tool.name}</h3>
+          <PriceBadge compact price={tool.price} chinese={tool.chinese} className="shrink-0" />
         </div>
         <p className="line-clamp-2 text-sm text-text-secondary">{tool.desc}</p>
       </div>
@@ -141,11 +143,11 @@ export function CompactSideCard({ tool }) {
             </div>
             {tool.price ? (
               <span
-                className={`inline-flex w-fit shrink-0 items-center justify-center truncate rounded-md border px-2 py-0.5 text-[11px] font-medium whitespace-nowrap ${
+                className={`inline-flex w-fit max-w-[7.5rem] shrink-0 items-center justify-center truncate rounded-md border px-2 py-0.5 text-[11px] font-medium ${
                   isFree ? 'border-success-soft bg-success-soft text-success' : 'border-warning-soft bg-warning-soft text-warning'
                 }`}
               >
-                {tool.price}
+                {compactPrice(tool.price)}
               </span>
             ) : null}
           </div>

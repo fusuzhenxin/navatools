@@ -1,18 +1,25 @@
+function passThroughImage(src) {
+  if (!src) return true
+  if (src.includes('imageMogr2')) return true
+  if (/\.svg(\?|#|$)/i.test(src)) return true
+  return !/pics\.novatools\.cn/i.test(src)
+}
+
 export function iconUrl(src) {
   if (!src) return ''
-  if (src.includes('imageMogr2') || src.endsWith('.svg')) return src
+  if (passThroughImage(src)) return src
   return `${src}?imageMogr2/thumbnail/128x128/format/webp/quality/90`
 }
 
 export function coverUrl(src) {
   if (!src) return ''
-  if (src.includes('imageMogr2')) return src
+  if (passThroughImage(src)) return src
   return `${src}?imageMogr2/thumbnail/960x480^/gravity/North/crop/960x480/format/webp/quality/85`
 }
 
 export function shotUrl(src) {
   if (!src) return ''
-  if (src.includes('imageMogr2')) return src
+  if (passThroughImage(src)) return src
   return `${src}?imageMogr2/thumbnail/512x288^/gravity/North/crop/512x288/format/webp/quality/85`
 }
 

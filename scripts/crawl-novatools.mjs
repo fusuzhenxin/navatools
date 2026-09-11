@@ -239,6 +239,13 @@ function loadExisting() {
   }
 }
 
+function keepEditorial(collections, map) {
+  const slugs = [...map.values()].filter((t) => t?.editorial).map((t) => t.slug)
+  if (!slugs.length) return collections
+  collections.new = unique([...slugs, ...(collections.new || [])])
+  return collections
+}
+
 function save(map) {
   const list = [...map.values()].sort((a, b) => a.slug.localeCompare(b.slug))
   const tmp = `${OUT}.tmp`
@@ -286,9 +293,12 @@ async function crawlMeta() {
   return collections
 }
 
+const catalog = loadExisting()
 const collections = SCREENSHOTS_ONLY && existsSync(COLLECTIONS_OUT)
   ? JSON.parse(readFileSync(COLLECTIONS_OUT, 'utf8'))
   : await crawlMeta()
+keepEditorial(collections, catalog)
+writeFileSync(COLLECTIONS_OUT, JSON.stringify(collections, null, 2))
 if (META_ONLY) {
   console.log('meta only, skip tools')
   process.exit(0)
@@ -301,7 +311,6 @@ const collectionsSlugs = unique([
   ...collections.free,
   ...collections.sidebar,
 ])
-const catalog = loadExisting()
 const slugs = SCREENSHOTS_ONLY
   ? unique([...catalog.keys(), ...collectionsSlugs])
   : unique([...(await loadSitemapSlugs()), ...collectionsSlugs])
@@ -310,7 +319,11 @@ const stale = (tool) =>
   SCREENSHOTS_ONLY
     ? !tool?.screenshots?.length
     : !tool?.about || !tool.features?.[0]?.desc || !tool.desc || tool.cover === tool.icon || !tool.screenshots?.length
-const pending = slugs.filter((s) => REFRESH || !catalog.has(s) || stale(catalog.get(s)))
+const pending = slugs.filter((s) => {
+  const existing = catalog.get(s)
+  if (existing?.editorial) return false
+  return REFRESH || !existing || stale(existing)
+})
 pending.sort((a, b) => Number(priority.includes(b)) - Number(priority.includes(a)))
 console.log(`sitemap=${slugs.length} already=${catalog.size} pending=${pending.length} refresh=${REFRESH} screenshotsOnly=${SCREENSHOTS_ONLY}`)
 
@@ -341,6 +354,7 @@ await mapLimit(pending, CONCURRENCY, async (slug) => {
 })
 
 for (const tool of catalog.values()) {
+  if (tool.editorial) continue
   tool.isNew = collections.new.includes(tool.slug)
   tool.isTrending = collections.trending.includes(tool.slug)
   tool.isFeatured = collections.featured.includes(tool.slug)
