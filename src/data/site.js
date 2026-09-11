@@ -17,6 +17,7 @@ export const NAV = [
   { to: '/tools', label: '工具' },
   { to: '/categories', label: '分类' },
   { to: '/insights', label: 'AI观察' },
+  { to: '/submit', label: '工具提交' },
 ]
 
 export const HOT_SEARCHES = ['LibTV', 'AI 短剧', '视频生成', '代码助手']

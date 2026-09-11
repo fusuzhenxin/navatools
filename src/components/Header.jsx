@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Plus, Search } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { IMG, NAV } from '../data/site.js'
 import { useAuth } from '../context/AuthContext.jsx'
 import Link from './Link.jsx'
@@ -34,7 +34,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Link
                 to="/submit"
-                className="inline-flex h-8 items-center rounded-control border border-brand-soft bg-brand-subtle px-2.5 text-xs font-medium text-brand"
+                className="px-2 text-sm font-medium text-text-secondary hover:text-brand"
               >
                 提交
               </Link>
@@ -106,13 +106,6 @@ export default function Header() {
                     )}
                   </NavLink>
                 ))}
-                <Link
-                  to="/submit"
-                  className="ml-1 inline-flex h-8 items-center gap-1 rounded-control bg-brand px-3 text-sm font-medium text-brand-foreground shadow-card transition hover:bg-brand-hover"
-                >
-                  <Plus className="h-3.5 w-3.5" />
-                  工具提交
-                </Link>
               </nav>
             </div>
             <div className="flex items-center gap-4">
