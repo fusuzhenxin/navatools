@@ -1,5 +1,3 @@
-import { lookup as dnsLookup } from 'node:dns'
-import { lookup as lookupAsync } from 'node:dns/promises'
 import nodemailer from 'nodemailer'
 
 const LIMIT = 5
@@ -51,43 +49,11 @@ function line(label, value) {
   return value ? `${label}：${value}` : ''
 }
 
-const RETRY_CODES = new Set(['EBUSY', 'EDNS', 'EAI_AGAIN', 'ETIMEDOUT', 'ECONNRESET', 'ESOCKET'])
+const QQ_SMTP_HOSTS = ['183.47.101.192']
 
-function lookupIPv4(hostname, _options, callback) {
-  dnsLookup(hostname, { family: 4, all: false }, callback)
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-async function resolveSmtpHost(host) {
-  let last
-  for (let i = 0; i < 3; i += 1) {
-    try {
-      const { address } = await lookupAsync(host, { family: 4 })
-      return address
-    } catch (error) {
-      last = error
-      await sleep(300 * (i + 1))
-    }
-  }
-  if (host === 'smtp.qq.com') return '183.47.101.192'
-  throw last
-}
-
-async function withRetry(run) {
-  let last
-  for (let i = 0; i < 3; i += 1) {
-    try {
-      return await run()
-    } catch (error) {
-      last = error
-      if (!RETRY_CODES.has(String(error?.code || ''))) throw error
-      await sleep(400 * (i + 1))
-    }
-  }
-  throw last
+function smtpTargets(host) {
+  if (!host || host === 'smtp.qq.com') return QQ_SMTP_HOSTS
+  return [host]
 }
 
 export async function sendToolSubmission(item) {
@@ -97,19 +63,8 @@ export async function sendToolSubmission(item) {
   if (!user || !pass) throw new Error('smtp-missing')
 
   const host = process.env.SMTP_HOST || 'smtp.qq.com'
-  const address = await resolveSmtpHost(host)
-  const transporter = nodemailer.createTransport({
-    host: address,
-    port: Number(process.env.SMTP_PORT || 465),
-    secure: Number(process.env.SMTP_PORT || 465) === 465,
-    auth: { user, pass },
-    lookup: lookupIPv4,
-    tls: { servername: host },
-    connectionTimeout: 12000,
-    greetingTimeout: 12000,
-    socketTimeout: 20000,
-  })
-
+  const port = Number(process.env.SMTP_PORT || 465)
+  const targets = smtpTargets(host)
   const body = [
     line('工具名称', item.name),
     line('官网', item.website),
@@ -123,13 +78,33 @@ export async function sendToolSubmission(item) {
     .filter(Boolean)
     .join('\n')
 
-  await withRetry(() =>
-    transporter.sendMail({
-      from: `"ToolLu 工具提交" <${user}>`,
-      to,
-      replyTo: item.email || undefined,
-      subject: `新工具提交：${item.name}`,
-      text: body,
-    }),
-  )
+  const mail = {
+    from: `"ToolLu 工具提交" <${user}>`,
+    to,
+    replyTo: item.email || undefined,
+    subject: `新工具提交：${item.name}`,
+    text: body,
+  }
+
+  let last
+  for (const target of targets) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: target,
+        port,
+        secure: port === 465,
+        auth: { user, pass },
+        tls: host === 'smtp.qq.com' || !host ? { servername: 'smtp.qq.com' } : undefined,
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
+      })
+      await transporter.sendMail(mail)
+      return
+    } catch (error) {
+      last = error
+      console.error('submit-smtp-target-failed', target, error?.code || '', error?.message || error)
+    }
+  }
+  throw last || new Error('smtp-send-failed')
 }
