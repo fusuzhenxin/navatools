@@ -17,7 +17,7 @@ export const CATEGORIES = [
   { slug: 'design-tools', name: '设计工具', icon: '🎨', type: '功能', count: 695, desc: 'AI 设计工具正成为创意工作流程中的重要助手，覆盖图形设计、UI/UX设计、网页设计、CAD 辅助绘图等多个领域。' },
   { slug: 'ai-agents', name: 'AI 智能体 (Agents)', icon: '🤖', type: '功能', count: 146, desc: 'AI智能体（Agents）正在开启从“对话”到“行动”的变革。不同于传统Chatbot，AI Agents具备自主规划、工具调用和多步任务执行能力。' },
   { slug: 'social-media', name: '社交媒体工具', icon: '📱', type: '功能', count: 415, desc: '专注于社交媒体运营、内容分发、账号矩阵管理及数据监测的专用工具集。' },
-  { slug: 'life-assistant', name: '个人事务管理', icon: '🧑‍', type: '功能', count: 425, desc: '聚焦于个人日常生活及工作事务的数字化组织与管理。涵盖智能提醒、日程规划、个人备忘及效率提升工具。' },
+  { slug: 'life-assistant', name: '个人事务管理', icon: '🧑‍', type: '功能', count: 426, desc: '聚焦于个人日常生活及工作事务的数字化组织与管理。涵盖智能提醒、日程规划、个人备忘及效率提升工具。' },
   { slug: 'learning-tools', name: '学习工具', icon: '📚', type: '功能', count: 955, desc: '学习工具通过AI支持语言学习、在线教育和笔记整理，助力学生和自学者提升效率。涵盖智能学习助手和课程规划功能。' },
   { slug: 'ai-translation', name: '翻译工具', icon: '🌐', type: '功能', count: 166, desc: 'AI翻译工具提供实时多语言翻译、语音翻译和字幕生成，助力跨境电商、国际会议和内容本地化。' },
   { slug: 'voice-cloning', name: '语音克隆', icon: '🧏', type: '功能', count: 86, desc: '语音克隆工具通过AI生成个性化配音与虚拟声音合成，助力影视、广告和虚拟助手创意实现。' },
