@@ -15,7 +15,7 @@ export const CATEGORIES = [
   { slug: 'voice-tools', name: '语音工具', icon: '🎤', type: '功能', count: 421, desc: '涵盖语音识别、语音合成、语音克隆及实时翻译等功能的AI语音解决方案。' },
   { slug: 'video-creation', name: '视频创作', icon: '🎬', type: '功能', count: 767, desc: 'AI视频创作工具提供智能视频编辑、自动剪辑和特效生成，助力用户快速打造专业视频内容。支持短视频、广告和教育视频制作。' },
   { slug: 'design-tools', name: '设计工具', icon: '🎨', type: '功能', count: 695, desc: 'AI 设计工具正成为创意工作流程中的重要助手，覆盖图形设计、UI/UX设计、网页设计、CAD 辅助绘图等多个领域。' },
-  { slug: 'ai-agents', name: 'AI 智能体 (Agents)', icon: '🤖', type: '功能', count: 146, desc: 'AI智能体（Agents）正在开启从“对话”到“行动”的变革。不同于传统Chatbot，AI Agents具备自主规划、工具调用和多步任务执行能力。' },
+  { slug: 'ai-agents', name: 'AI 智能体 (Agents)', icon: '🤖', type: '功能', count: 147, desc: 'AI智能体（Agents）正在开启从“对话”到“行动”的变革。不同于传统Chatbot，AI Agents具备自主规划、工具调用和多步任务执行能力。' },
   { slug: 'social-media', name: '社交媒体工具', icon: '📱', type: '功能', count: 415, desc: '专注于社交媒体运营、内容分发、账号矩阵管理及数据监测的专用工具集。' },
   { slug: 'life-assistant', name: '个人事务管理', icon: '🧑‍', type: '功能', count: 426, desc: '聚焦于个人日常生活及工作事务的数字化组织与管理。涵盖智能提醒、日程规划、个人备忘及效率提升工具。' },
   { slug: 'learning-tools', name: '学习工具', icon: '📚', type: '功能', count: 955, desc: '学习工具通过AI支持语言学习、在线教育和笔记整理，助力学生和自学者提升效率。涵盖智能学习助手和课程规划功能。' },
