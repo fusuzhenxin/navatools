@@ -9,12 +9,12 @@ export const CATEGORIES = [
   { slug: 'data-privacy', name: '数据脱敏 & 隐私保护', icon: '🔐', type: '功能', count: 138, desc: '数据隐私与匿名化工具通过AI技术提供数据脱敏、加密和合规检测，保护敏感信息安全。支持医疗、金融、教育等行业的数据隐私需求，助力企业在AI应用中实现法规遵循。' },
   { slug: 'music-creation', name: '音乐创作', icon: '🎵', type: '功能', count: 190, desc: 'AI音乐创作工具支持自动作曲、旋律生成、伴奏合成和音频修复，激发音乐创意与效率。适用于音乐人、短视频创作者和教育场景，轻松打造专业音效。' },
   { slug: 'chatbot-ai', name: '聊天机器人', icon: '💬', type: '功能', count: 589, desc: 'AI聊天机器人提供自动客服、语音交互和虚拟助手功能，助力企业提升客户服务效率，降低人力成本。支持电商、咨询和教育等场景，带来个性化用户体验。' },
-  { slug: 'code-writing', name: '代码编写', icon: '💻', type: '功能', count: 288, desc: '代码编写工具通过AI提供智能补全、自动生成代码和错误检测，助力开发者提升效率。支持多种语言，适合初学者到专业程序员。' },
+  { slug: 'code-writing', name: '代码编写', icon: '💻', type: '功能', count: 289, desc: '代码编写工具通过AI提供智能补全、自动生成代码和错误检测，助力开发者提升效率。支持多种语言，适合初学者到专业程序员。' },
   { slug: 'content-summarization', name: '内容摘要', icon: '🧠', type: '功能', count: 244, desc: '内容摘要工具利用AI技术，从PDF、网页、视频、音频等内容源快速提取关键信息，生成简洁准确的摘要。帮助用户高效获取信息精华。' },
   { slug: 'image-editing', name: '图像编辑', icon: '🎨', type: '功能', count: 617, desc: 'AI 图像编辑工具为用户提供高效、智能的图片处理体验，涵盖去背景、照片修复、艺术风格转换、图像增强与生成等实用功能。' },
   { slug: 'voice-tools', name: '语音工具', icon: '🎤', type: '功能', count: 421, desc: '涵盖语音识别、语音合成、语音克隆及实时翻译等功能的AI语音解决方案。' },
   { slug: 'video-creation', name: '视频创作', icon: '🎬', type: '功能', count: 767, desc: 'AI视频创作工具提供智能视频编辑、自动剪辑和特效生成，助力用户快速打造专业视频内容。支持短视频、广告和教育视频制作。' },
-  { slug: 'design-tools', name: '设计工具', icon: '🎨', type: '功能', count: 695, desc: 'AI 设计工具正成为创意工作流程中的重要助手，覆盖图形设计、UI/UX设计、网页设计、CAD 辅助绘图等多个领域。' },
+  { slug: 'design-tools', name: '设计工具', icon: '🎨', type: '功能', count: 697, desc: 'AI 设计工具正成为创意工作流程中的重要助手，覆盖图形设计、UI/UX设计、网页设计、CAD 辅助绘图等多个领域。' },
   { slug: 'ai-agents', name: 'AI 智能体 (Agents)', icon: '🤖', type: '功能', count: 147, desc: 'AI智能体（Agents）正在开启从“对话”到“行动”的变革。不同于传统Chatbot，AI Agents具备自主规划、工具调用和多步任务执行能力。' },
   { slug: 'social-media', name: '社交媒体工具', icon: '📱', type: '功能', count: 415, desc: '专注于社交媒体运营、内容分发、账号矩阵管理及数据监测的专用工具集。' },
   { slug: 'life-assistant', name: '个人事务管理', icon: '🧑‍', type: '功能', count: 426, desc: '聚焦于个人日常生活及工作事务的数字化组织与管理。涵盖智能提醒、日程规划、个人备忘及效率提升工具。' },
@@ -39,7 +39,7 @@ export const CATEGORIES = [
   { slug: 'deep-learning', name: '深度学习', icon: '🧬', type: '技术', count: 73, desc: '深度学习工具通过神经网络和自动学习框架，助力开发者构建高效AI模型。支持图像识别、语音处理和预测分析。' },
   { slug: 'computer-vision', name: '计算机视觉', icon: '👁️', type: '技术', count: 485, desc: '计算机视觉工具通过AI实现图像识别、目标检测和视频分析，提升自动化与数据洞察能力。' },
   { slug: 'machine-learning', name: '机器学习', icon: '🧮', type: '技术', count: 366, desc: '机器学习工具通过回归、分类和聚类算法，助力数据科学家构建智能预测模型。' },
-  { slug: 'large-models', name: '大模型', icon: '🏰', type: '技术', count: 376, desc: '大模型工具基于 GPT、BERT、Claude、Gemini 等主流预训练架构，具备卓越的语言理解、图像识别与多模态处理能力。' },
+  { slug: 'large-models', name: '大模型', icon: '🏰', type: '技术', count: 377, desc: '大模型工具基于 GPT、BERT、Claude、Gemini 等主流预训练架构，具备卓越的语言理解、图像识别与多模态处理能力。' },
 ]
 
 export const CATEGORY_GROUPS = [

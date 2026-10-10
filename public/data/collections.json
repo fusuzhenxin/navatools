@@ -1,5 +1,10 @@
 {
   "new": [
+    "ezapi",
+    "imagetostl",
+    "mangatranslate",
+    "seedrouter",
+    "cpages",
     "img-upscaler",
     "wtagent",
     "free-ai-music-creator",
@@ -13,7 +18,6 @@
     "zi-wei-dou-shu",
     "telemetry",
     "memotune",
-    "mangatranslate",
     "askcc",
     "hi-waifu",
     "maxfusion-ai-368bdd73",
