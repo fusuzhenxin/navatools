@@ -24,6 +24,14 @@ export default function Submit() {
       <p className="mt-4 max-w-2xl text-text-secondary">
         ToolLu 会把优质工具呈现在分类、搜索、详情页和后续推广场景中，帮助供应商获得更精准的自然发现机会。
       </p>
+      <div className="mt-6 max-w-2xl rounded-card border border-border bg-surface-raised p-5">
+        <h2 className="font-semibold">工具收录说明</h2>
+        <p className="mt-2 text-sm leading-6 text-text-secondary">
+          收录需要时间，提交后请等待审核，请勿重复提交同一工具。着急上线可以
+          <Link to="/contact" className="mx-1 text-brand">了解加速收录</Link>
+          。
+        </p>
+      </div>
       <div className="mt-6 flex gap-3">
         <a href="#form" className="rounded-control bg-brand px-4 py-2 text-sm text-white">免费提交</a>
         <Link to="/contact" className="rounded-control border border-border px-4 py-2 text-sm">了解加速收录</Link>
@@ -44,7 +52,9 @@ export default function Submit() {
 
       <section id="form" className="mt-12 rounded-panel border border-border bg-surface-raised p-6">
         <h2 className="text-2xl font-bold">免费提交工具</h2>
-        <p className="mt-2 text-sm text-text-secondary">提交后会发到我们的邮箱，审核通过后进入工具目录。</p>
+        <p className="mt-2 text-sm text-text-secondary">
+          提交后会发到我们的邮箱，审核通过后进入工具目录。收录需要时间，请勿重复提交；着急可先了解加速收录。
+        </p>
         <form
           className="mt-6 grid gap-3"
           onSubmit={async (e) => {
@@ -99,7 +109,7 @@ export default function Submit() {
             {sending ? '正在发送…' : '提交'}
           </button>
           {error ? <p className="text-sm text-red-500">{error}</p> : null}
-          {done ? <p className="text-sm text-success">已发送到邮箱，我们会尽快审核。</p> : null}
+          {done ? <p className="text-sm text-success">已发送到邮箱，请等待审核，请勿重复提交。</p> : null}
         </form>
       </section>
 
@@ -113,8 +123,8 @@ export default function Submit() {
       <h2 className="mt-14 text-2xl font-bold">收录路径</h2>
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
         {[
-          ['免费', '标准收录', '进入正常审核队列'],
-          ['即将开放', '加速审核', '提交后可升级优先处理'],
+          ['免费', '标准收录', '进入正常审核队列，收录需要时间'],
+          ['可联系', '加速收录', '着急上线可了解加速收录，请勿重复提交'],
           ['商务合作', '推广曝光', '适合新品发布和增长活动'],
         ].map(([tag, title, desc]) => (
           <div key={title} className="rounded-card border border-border p-5">

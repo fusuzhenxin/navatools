@@ -4,7 +4,9 @@ export default function Contact() {
   return (
     <div className="mx-auto max-w-xl px-4 py-10 sm:px-6">
       <h1 className="text-4xl font-bold">联系我们</h1>
-      <p className="mt-3 text-text-secondary">有问题、合作或建议，可以通过邮箱、微信、Gitee 或小红书联系。</p>
+      <p className="mt-3 text-text-secondary">
+        有问题、合作、建议，或需要了解加速收录，可以通过邮箱、微信、Gitee 或小红书联系。工具收录需要时间，请勿重复提交。
+      </p>
 
       <div className="mt-8 rounded-panel border border-border bg-surface-raised p-6 shadow-card">
         <img src={IMG.wechat} alt="微信公众号" className="mx-auto h-48 w-48 rounded-md bg-white object-contain" />
