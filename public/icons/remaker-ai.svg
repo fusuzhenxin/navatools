@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Remaker AI">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5d66b"/><stop offset="1" stop-color="#d9a52a"/></linearGradient></defs>
+  <rect width="64" height="64" rx="16" fill="#151310"/>
+  <path d="M20 46V18h13.5c6.4 0 10.5 3.7 10.5 9.2 0 4-2.2 6.9-5.8 8.2L45 46h-7.2l-5.9-9.6H26.4V46H20zm6.4-15h6.6c3 0 4.8-1.5 4.8-3.8s-1.8-3.8-4.8-3.8h-6.6v7.6z" fill="url(#g)"/>
+  <circle cx="47" cy="19" r="4" fill="#f5d66b"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="formweft-icon-title">
+  <title id="formweft-icon-title">FORMWEFT</title>
+  <rect width="64" height="64" rx="12" fill="#071117"/>
+  <defs>
+    <mask id="formweft-icon-gap" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <path fill="#fff" d="M0 0h64v64H0z"/>
+      <path fill="#000" stroke="#000" stroke-width="6" d="M2 8h12l10 29L34 8h12L29 56H19z"/>
+    </mask>
+  </defs>
+  <g transform="translate(3 3) scale(.90625)">
+    <path fill="#89c9d1" mask="url(#formweft-icon-gap)" d="M18 8h12l10 29L50 8h12L45 56H35z"/>
+    <path fill="#edf5f7" d="M2 8h12l10 29L34 8h12L29 56H19z"/>
+  </g>
+</svg>

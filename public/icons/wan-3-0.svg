@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title desc">
+  <title id="title">Wan 3.0 AI logo</title>
+  <desc id="desc">Three rising motion strokes forming a W with a play-forward accent.</desc>
+  <rect width="48" height="48" rx="13" fill="#170d12"/>
+  <path d="M11 14v13.5c0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5V14" fill="none" stroke="#ff5c8a" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="M24 27.5c0-7.5 12-7.5 12 0" fill="none" stroke="#ffb3c8" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="m31.5 10.5 4.5 3.75-4.5 3.75" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
