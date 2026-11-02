@@ -1,6 +1,7 @@
 import Link from '../components/Link.jsx'
 import { listCategories, listCategoryGroups } from '../data/categories.js'
 import Breadcrumb from '../components/Breadcrumb.jsx'
+import { PromoBanner } from '../components/PromoCard.jsx'
 import { PAGE_LEADS } from '../lib/copy.js'
 
 export default function Categories() {
@@ -10,6 +11,9 @@ export default function Categories() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumb items={[{ label: '工具', to: '/tools' }, { label: '分类' }]} />
+      <div className="mb-8">
+        <PromoBanner />
+      </div>
       <header className="mb-16">
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-text-primary lg:text-5xl">
           AI 工具<span className="text-brand">分类导航</span>

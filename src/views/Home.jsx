@@ -2,12 +2,14 @@ import { featuredTools, freeTools, newTools, trendingTools } from '../data/tools
 import SectionHeader from '../components/SectionHeader.jsx'
 import { FeaturedCard, FreeCard, ToolRowCard } from '../components/ToolCards.jsx'
 import HomeSearch from '../components/HomeSearch.jsx'
+import { PromoBanner } from '../components/PromoCard.jsx'
 
 export default function Home() {
   return (
     <div>
       <HomeSearch />
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        <PromoBanner />
         <section>
           <SectionHeader title="最新上线" to="/tools/new" />
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

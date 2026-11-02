@@ -2,6 +2,7 @@ import { freeTools, getTools } from '../data/tools.js'
 import { MediaCard } from '../components/ToolCards.jsx'
 import Breadcrumb from '../components/Breadcrumb.jsx'
 import Link from '../components/Link.jsx'
+import { PromoBanner } from '../components/PromoCard.jsx'
 
 export default function Tools({ filter, page = 1 }) {
   const pageSize = 12
@@ -17,6 +18,9 @@ export default function Tools({ filter, page = 1 }) {
         <h1 className="text-3xl font-bold text-text-primary lg:text-4xl">AI 工具库</h1>
         <p className="mt-3 max-w-2xl text-text-secondary">发现和使用最新的 AI 工具，提升你的工作效率</p>
       </header>
+      <div className="mb-6">
+        <PromoBanner />
+      </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {list.slice(0, visible).map((tool) => (
           <MediaCard key={tool.slug} tool={tool} />

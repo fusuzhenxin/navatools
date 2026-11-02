@@ -1,6 +1,7 @@
 import Breadcrumb from '../components/Breadcrumb.jsx'
 import Link from '../components/Link.jsx'
 import { CompactSideCard, MediaCard } from '../components/ToolCards.jsx'
+import { PromoBanner, PromoSideCard } from '../components/PromoCard.jsx'
 
 export default function CategoryDetail({ cat, tools = [], sidebar = [], page = 1 }) {
   const visible = page * 12
@@ -17,6 +18,10 @@ export default function CategoryDetail({ cat, tools = [], sidebar = [], page = 1
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumb items={[{ label: '工具', to: '/tools' }, { label: '分类', to: '/categories' }, { label: cat.name }]} />
+
+      <div className="mb-6">
+        <PromoBanner />
+      </div>
 
       <div className="mb-8 rounded-panel border border-border bg-surface-raised p-6 shadow-card sm:p-8">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-6">
@@ -60,8 +65,9 @@ export default function CategoryDetail({ cat, tools = [], sidebar = [], page = 1
           )}
         </div>
 
-        <aside>
-          <div className="rounded-panel border border-border bg-surface-raised p-4 lg:sticky lg:top-24">
+        <aside className="space-y-4 lg:sticky lg:top-24">
+          <PromoSideCard />
+          <div className="rounded-panel border border-border bg-surface-raised p-4">
             <h3 className="mb-3 text-base font-semibold text-text-primary">精选工具</h3>
             <div className="grid grid-cols-1 gap-3">
               {sidebar.map((tool) => (

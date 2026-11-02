@@ -1,5 +1,6 @@
 import { FeaturedCard, FreeCard, MediaCard, ToolRowCard } from '../components/ToolCards.jsx'
 import Breadcrumb from '../components/Breadcrumb.jsx'
+import { PromoBanner } from '../components/PromoCard.jsx'
 
 const CARDS = {
   row: ToolRowCard,
@@ -18,6 +19,9 @@ export default function ToolCollection({ title, desc, tools, card = 'row' }) {
         <h1 className="text-3xl font-bold text-text-primary">{title}</h1>
         <p className="mt-3 max-w-2xl text-text-secondary">{desc}</p>
       </header>
+      <div className="mb-6">
+        <PromoBanner />
+      </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {tools.map((tool) => (
           <Card key={tool.slug} tool={tool} />

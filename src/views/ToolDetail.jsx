@@ -8,6 +8,7 @@ import Breadcrumb from '../components/Breadcrumb.jsx'
 import Link from '../components/Link.jsx'
 import { PriceBadge } from '../components/Badge.jsx'
 import { CompactSideCard, ToolRowCard } from '../components/ToolCards.jsx'
+import { PromoBanner, PromoSideCard } from '../components/PromoCard.jsx'
 import { altReason } from '../lib/copy.js'
 import { aboutParagraphs } from '../lib/seo.js'
 import { coverUrl, iconUrl, shotUrl, timeAgo } from '../lib/utils.js'
@@ -54,6 +55,10 @@ export default function ToolDetail({ tool, alts = [], sidebar = [] }) {
           { label: tool.name },
         ]}
       />
+
+      <div className="mb-5">
+        <PromoBanner />
+      </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div>
@@ -228,6 +233,7 @@ export default function ToolDetail({ tool, alts = [], sidebar = [] }) {
         </div>
 
         <aside className="space-y-3">
+          <PromoSideCard />
           <h3 className="font-semibold">精选工具</h3>
           {sidebar.map((item) => (
             <CompactSideCard key={item.slug} tool={item} />

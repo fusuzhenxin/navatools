@@ -2,6 +2,7 @@ import '../src/index.css'
 import Header from '../src/components/Header.jsx'
 import Footer from '../src/components/Footer.jsx'
 import Providers from '../src/components/Providers.jsx'
+import { PromoTopBar } from '../src/components/PromoCard.jsx'
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, SITE_URL } from '../src/lib/seo.js'
 
 export const metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           <div className="min-h-screen bg-background flex flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0">
+            <PromoTopBar />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
