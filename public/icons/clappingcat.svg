@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Clapping Cat">
+  <rect width="64" height="64" rx="14" fill="#ff7a59"/>
+  <path d="M15 26 13 10l11 8c2.5-.7 5.2-1 8-1s5.5.3 8 1l11-8-2 16c2 3 3 6.4 3 10 0 11-9 18-20 18S12 47 12 36c0-3.6 1-7 3-10z" fill="#1b1715"/>
+  <circle cx="24.5" cy="33" r="2.6" fill="#f3c64a"/>
+  <circle cx="39.5" cy="33" r="2.6" fill="#f3c64a"/>
+  <path d="M23 41.5c2.6 2.6 5.6 3.8 9 3.8s6.4-1.2 9-3.8" fill="#fffaf3"/>
+  <path d="M23 41.5h18" stroke="#fffaf3" stroke-width="1.6"/>
+</svg>

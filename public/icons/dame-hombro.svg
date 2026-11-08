@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dame Hombro AI">
+  <rect width="64" height="64" rx="14" fill="#1a1030"/>
+  <circle cx="32" cy="22" r="9" fill="#fbf5ff"/>
+  <path d="M10 52c2-10 10-16 22-16s20 6 22 16z" fill="#fbf5ff"/>
+  <path d="M32 36c12 0 20 6 22 16H40c-1-7-4-12-8-16z" fill="#ff5c7a"/>
+</svg>
